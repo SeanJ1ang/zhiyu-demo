@@ -57,7 +57,7 @@
     article.className = `message ${role}`;
     const label = document.createElement('div');
     label.className = 'speaker';
-    label.textContent = role === 'user' ? '你' : '知遇 · AI 助手';
+    label.textContent = role === 'user' ? '你' : '知遇';
     const bubble = document.createElement('div');
     bubble.className = 'bubble';
     if (text) bubble.textContent = text;
@@ -142,7 +142,7 @@
       link.textContent = scenario.link.text;
       view.article.append(link);
     }
-    addNote(view, '演示回放：以上工具事件与回答为预录内容，流程与真实系统一致。', 'replay-note');
+    addNote(view, '演示回放 · 工具事件与回答为预录内容', 'replay-note');
     setRunning(false);
   }
 
@@ -192,7 +192,7 @@
     syncInput();
     const view = addMessage('assistant', '');
     view.bubble.textContent =
-      '这是预录演示环境，无法实时处理新的输入。请点击左侧任一演示场景，观看真实界面下的完整服务流程回放。';
+      '这个演示环境只准备了左侧四个场景的完整流程，点一个看看吧。';
     addNote(view, '完整部署中，这里会由模型理解你的问题并自主选择合适的业务工具。', 'replay-note');
   });
 
