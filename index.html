@@ -2,59 +2,81 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>知遇 · 智能客服 — 演示回放</title><link rel="icon" href="data:,">
-  <link rel="stylesheet" href="./chat.css"><link rel="stylesheet" href="./showcase.css">
+  <title>知遇 · 智能客服</title><link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./showcase.css">
   <script src="./replay.js" defer></script>
 </head>
 <body>
 <div class="workspace">
   <aside class="sidebar">
-    <a class="brand" href="./" aria-label="知遇首页"><span class="brand-symbol">知</span><span>知遇 <small>智能客服</small></span></a>
-    <button class="new-chat" id="new-chat"><span aria-hidden="true">＋</span> 重置演示</button>
+    <a class="brand" href="./" aria-label="知遇首页">
+      <span class="brand-symbol">知</span><span class="brand-name">知遇</span>
+    </a>
+    <button class="new-chat" id="new-chat">重新开始</button>
     <div class="nav-label">演示场景</div>
     <nav aria-label="演示场景导航" id="scenarios">
-      <button class="nav-item" data-scenario="logistics"><span aria-hidden="true">◌</span> 物流查询 <span class="nav-arrow" aria-hidden="true">↗</span></button>
-      <button class="nav-item" data-scenario="returns"><span aria-hidden="true">▤</span> 退货政策咨询</button>
-      <button class="nav-item" data-scenario="shipping"><span aria-hidden="true">✳</span> 邮费规则咨询</button>
-      <button class="nav-item" data-scenario="ticket"><span aria-hidden="true">✎</span> 创建人工工单</button>
+      <button class="nav-item" data-scenario="logistics">
+        <span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7zM7 18a1.8 1.8 0 1 0 0-.01M17 18a1.8 1.8 0 1 0 0-.01"/></svg></span>
+        物流查询
+      </button>
+      <button class="nav-item" data-scenario="returns">
+        <span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 9V5h16v4M4 9h16v10H4zM9 13h6"/></svg></span>
+        退货政策
+      </button>
+      <button class="nav-item" data-scenario="shipping">
+        <span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M17 6.5c0-1.9-2.2-3-5-3s-5 1.1-5 3 1.8 2.7 5 3.5 5 1.6 5 3.5-2.2 3-5 3-5-1.1-5-3"/></svg></span>
+        邮费规则
+      </button>
+      <button class="nav-item" data-scenario="ticket">
+        <span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h14v13H9l-4 3zM9 8.5h6M9 11.5h4"/></svg></span>
+        人工工单
+      </button>
     </nav>
-    <div class="nav-label">说明</div>
-    <nav aria-label="说明导航">
-      <button class="nav-item" id="about-open"><span aria-hidden="true">ⓘ</span> 关于本演示</button>
-    </nav>
-    <div class="sidebar-note"><span class="note-label">让沟通更简单</span><p>从一个问题开始，<br>一起找到解决办法。</p></div>
-    <div class="sidebar-foot"><span class="avatar">演</span><span>演示工作空间<small>对话为预录回放</small></span></div>
+    <div class="sidebar-spacer"></div>
+    <button class="about-link" id="about-open">关于本演示</button>
   </aside>
+
   <main>
     <header>
-      <div><span id="page-title">客服对话</span><span class="header-tag">AI 助手</span></div>
-      <span class="status replay" id="connection" role="status">演示回放 · 非实时模型输出</span>
+      <span id="page-title">客服对话</span>
+      <span class="status replay" id="connection" role="status">演示回放</span>
     </header>
+
     <section class="scroll-area" id="scroll-area" aria-label="对话内容">
       <div class="welcome" id="welcome">
-        <div class="eyebrow">ANKER HACKATHON · 智能服务赛道</div>
-        <div class="welcome-mark" aria-hidden="true">✳</div>
-        <h1 id="welcome-title">每一个问题，<br>都值得认真回应。</h1>
-        <p id="welcome-description">这是「知遇」智能客服的可交互演示：从左侧选择一个场景，观看真实界面下的完整服务流程回放。</p>
+        <h1 id="welcome-title"><span class="grad">你好</span></h1>
+        <p id="welcome-description">说说你遇到的问题，退换货、物流、售后都可以。</p>
         <div class="suggestions" id="suggestions">
-          <button data-scenario="returns"><span>退换货咨询</span><small>签收后发现不合适，能退吗？</small><b aria-hidden="true">↗</b></button>
-          <button data-scenario="logistics"><span>物流问题</span><small>包裹迟迟没到，想了解进度</small><b aria-hidden="true">↗</b></button>
-          <button data-scenario="ticket"><span>售后帮助</span><small>商品有破损，需要人工处理</small><b aria-hidden="true">↗</b></button>
+          <button data-scenario="returns">
+            <span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 9V5h16v4M4 9h16v10H4zM9 13h6"/></svg></span>
+            <span class="card-title">退换货咨询</span>
+            <span class="card-desc">签收后发现不合适，能退吗？</span>
+          </button>
+          <button data-scenario="logistics">
+            <span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7zM7 18a1.8 1.8 0 1 0 0-.01M17 18a1.8 1.8 0 1 0 0-.01"/></svg></span>
+            <span class="card-title">物流问题</span>
+            <span class="card-desc">包裹迟迟没到，想了解进度</span>
+          </button>
+          <button data-scenario="ticket">
+            <span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h14v13H9l-4 3zM9 8.5h6M9 11.5h4"/></svg></span>
+            <span class="card-title">售后帮助</span>
+            <span class="card-desc">商品有破损，需要人工处理</span>
+          </button>
         </div>
       </div>
       <div class="messages" id="messages" role="log" aria-label="聊天消息" aria-live="polite" aria-relevant="additions"></div>
     </section>
+
     <div class="composer-area">
       <form id="composer" class="composer">
         <label class="sr-only" for="message">输入消息</label>
-        <textarea id="message" rows="2" maxlength="16000" placeholder="演示环境无法处理新输入，请点击左侧场景观看回放…"></textarea>
-        <div class="composer-bottom">
-          <span id="input-hint">Enter 发送 · Shift + Enter 换行</span>
-          <button id="send" type="submit" disabled aria-label="发送消息">发送 <span aria-hidden="true">↑</span></button>
-          <button id="stop" type="button" hidden>停止回放 <span aria-hidden="true">■</span></button>
-        </div>
+        <textarea id="message" rows="1" maxlength="16000" placeholder="描述你遇到的问题…"></textarea>
+        <button id="send" type="submit" disabled aria-label="发送消息">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        </button>
+        <button id="stop" type="button" hidden>停止</button>
       </form>
-      <div class="footnote">演示回放：工具事件与回答为预录内容，流程与真实系统一致。AI 回复仅供参考，实际售后处理请以商家确认为准。</div>
+      <div class="footnote">演示回放 · 回复为预录内容，不连接后端服务</div>
     </div>
   </main>
 </div>
@@ -63,7 +85,7 @@
   <div class="about-panel" role="dialog" aria-modal="true" aria-labelledby="about-title">
     <button class="about-close" id="about-close" aria-label="关闭">×</button>
     <h2 id="about-title">关于本演示</h2>
-    <p><strong>「知遇」智能客服</strong>是 Anker 首届黑客松「赛道四 · 智能服务：真正听懂，真正解决」的参赛项目。它承接用户的售后求助：理解情绪化与歧义表达、确认产品、检索知识库排障、必要时创建人工工单并交接。</p>
+    <p>「知遇」是 Anker 首届黑客松「智能服务」赛道的参赛项目：承接用户售后求助，理解情绪化与歧义表达，检索知识库排障，必要时创建人工工单并完成交接。</p>
     <h3>产品架构</h3>
     <img class="about-arch" src="./architecture.png" alt="智能客服产品架构：前端交互页面、Agent 服务应用、工单管理系统与知识库">
     <h3>哪些是真，哪些是演示</h3>
@@ -71,7 +93,7 @@
       <div class="truth real">
         <h4>完整部署中的真实实现</h4>
         <ul>
-          <li>知识库问答：硅基流动 BGE-M3 向量检索 + Milvus，MySQL 保存权威原文</li>
+          <li>知识库问答：BGE-M3 向量检索 + Milvus，MySQL 保存权威原文</li>
           <li>创建工单：真实写入本地 MySQL，人工工单台可查看交接摘要</li>
           <li>SSE 流式对话、工具调用徽章、多轮上下文回忆</li>
           <li>售后描述结构化提取（订单号 / 诉求类型 / 期望方案）</li>
@@ -81,13 +103,12 @@
         <h4>模拟与本页面的边界</h4>
         <ul>
           <li>订单、商品、物流数据为随机模拟，不代表真实业务信息</li>
-          <li>本页面为纯静态演示站：对话是预录回放，不连接任何后端</li>
+          <li>本页面为静态演示站：对话是预录回放，不连接任何后端</li>
           <li>本页面不会创建真实工单、不收集任何输入</li>
           <li>完整系统仅面向本地单用户演示，无鉴权，不可直接公开部署</li>
         </ul>
       </div>
     </div>
-    <p class="about-src">前端样式与消息结构直接复用自项目真实代码（app/static/chat.css / chat.js），回放脚本依据仓库 README 的演示流程编写。</p>
   </div>
 </div>
 </body>
