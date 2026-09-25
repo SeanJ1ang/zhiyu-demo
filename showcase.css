@@ -1,0 +1,22 @@
+/* 演示站补充样式（不改动项目真实 chat.css） */
+.status.replay { color:#75602c; background:#f8f3e6; border:1px solid #e3d7b5; border-radius:20px; padding:5px 12px; font-size:12px; }
+.about-mask { position:fixed; inset:0; z-index:50; display:grid; place-items:center; background:#263e3759; padding:24px; }
+.about-panel { position:relative; max-width:860px; max-height:88dvh; overflow:auto; background:var(--white); border-radius:16px; padding:34px 38px; box-shadow:0 24px 60px #263e3740; line-height:1.8; }
+.about-panel h2 { margin:0 0 14px; font-size:22px; }
+.about-panel h3 { margin:24px 0 10px; font-size:15px; color:var(--accent); }
+.about-panel p { margin:0 0 10px; font-size:14px; }
+.about-close { position:absolute; top:14px; right:16px; width:32px; height:32px; border:0; border-radius:50%; background:#eef2ec; color:var(--ink); font-size:18px; }
+.about-close:hover { background:#e0e7dd; }
+.about-arch { width:100%; border:1px solid var(--line); border-radius:10px; }
+.truth-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.truth { border-radius:12px; padding:16px 18px; font-size:13px; }
+.truth h4 { margin:0 0 8px; font-size:13px; }
+.truth ul { margin:0; padding-left:18px; }
+.truth li { margin-bottom:6px; }
+.truth.real { background:#edf4ee; border:1px solid #ccd9ce; }
+.truth.real h4 { color:var(--accent); }
+.truth.mock { background:#f8f3e6; border:1px solid #e3d7b5; }
+.truth.mock h4 { color:#75602c; }
+.about-src { margin-top:18px; color:var(--muted); font-size:12px; }
+.message-note.replay-note { color:#75602c; }
+@media(max-width:680px){ .truth-grid{grid-template-columns:1fr} .about-panel{padding:24px 20px} }
