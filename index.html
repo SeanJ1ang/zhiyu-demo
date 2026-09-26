@@ -31,6 +31,14 @@
         <span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h14v13H9l-4 3zM9 8.5h6M9 11.5h4"/></svg></span>
         人工工单
       </button>
+      <button class="nav-item" data-scenario="s1pro-fix">
+        <span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 4v2M12 18v2M4 12h2M18 12h2"/></svg></span>
+        S1 Pro 排障
+      </button>
+      <button class="nav-item" data-scenario="s1pro-human">
+        <span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></span>
+        转人工直通
+      </button>
     </nav>
     <div class="sidebar-spacer"></div>
     <button class="about-link" id="about-open">关于本演示</button>
@@ -41,6 +49,7 @@
       <span id="page-title">客服对话</span>
       <span class="status replay" id="connection" role="status">演示回放</span>
     </header>
+    <div class="s1pro-status" id="s1pro-status" role="status" hidden></div>
 
     <section class="scroll-area" id="scroll-area" aria-label="对话内容">
       <div class="welcome" id="welcome">
@@ -61,6 +70,16 @@
             <span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h14v13H9l-4 3zM9 8.5h6M9 11.5h4"/></svg></span>
             <span class="card-title">售后帮助</span>
             <span class="card-desc">商品有破损，需要人工处理</span>
+          </button>
+          <button data-scenario="s1pro-fix">
+            <span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 4v2M12 18v2M4 12h2M18 12h2"/></svg></span>
+            <span class="card-title">S1 Pro 排障</span>
+            <span class="card-desc">扫地机器人吸力变弱，多轮引导排查</span>
+          </button>
+          <button data-scenario="s1pro-human">
+            <span class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></span>
+            <span class="card-title">转人工直通</span>
+            <span class="card-desc">明确要找人工时，不再绕弯</span>
           </button>
         </div>
       </div>
@@ -96,6 +115,8 @@
           <li>知识库问答：BGE-M3 向量检索 + Milvus，MySQL 保存权威原文</li>
           <li>创建工单：真实写入本地 MySQL，人工工单台可查看交接摘要</li>
           <li>SSE 流式对话、工具调用徽章、多轮上下文回忆</li>
+          <li>S1 Pro 多轮排障：阶段流式提示、检索命中徽章、阶段快捷回复</li>
+          <li>情绪承接：识别急迫 / 沮丧 / 道谢并分级响应，急迫原因在解决与工单交接中被回忆引用</li>
           <li>售后描述结构化提取（订单号 / 诉求类型 / 期望方案）</li>
         </ul>
       </div>

@@ -201,3 +201,22 @@ header {
   .truth-grid { grid-template-columns: 1fr; }
   .about-panel { padding: 24px 20px; }
 }
+
+/* ---------- S1 Pro 多轮：状态条 / 快捷回复 / 阶段呼吸 ---------- */
+.s1pro-status {
+  flex: none; padding: 8px 28px;
+  border-bottom: 1px solid #f2f2f5;
+  background: var(--accent-soft); color: #6d28d9;
+  font-size: 11.5px; line-height: 1.6;
+}
+.quick-replies { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.quick-reply {
+  padding: 6px 14px; border: 1px solid var(--accent-line); border-radius: 999px;
+  background: #fff; color: var(--accent); font-size: 12.5px;
+}
+.quick-reply:hover:not(:disabled) { background: var(--accent-soft); }
+.quick-reply:disabled { opacity: .45; }
+.quick-reply.chosen { background: var(--accent); color: #fff; opacity: 1; }
+.bubble.pending { animation: breathe 1.6s ease-in-out infinite; color: var(--muted); }
+@keyframes breathe { 0%,100% { opacity: .45 } 50% { opacity: 1 } }
+@media (prefers-reduced-motion: reduce) { .bubble.pending { animation: none; } }
